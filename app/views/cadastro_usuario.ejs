@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script src="js/jquery-2.2.1.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+	<title>Cadastro</title>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Application</a>
+	  <a class="btn btn-secondary" href="/login" role="button">Logar</a>
+	</nav>
+	<br />
+	 
+	 <div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<center>
+					<h3 class="text-primary">Cadastro de Usuários</h3>
+				</center>	
+				<hr>
+				<form class="form-cadastro" action="/cadastrar_usuario" method="post">
+				<div class="col-sm-12">
+					<div class="form-group">
+						<right>
+							<input type="radio" id="left-item" name="sexo" value="masculino"> Masculino
+						</right>
+						<right>
+							<input type="radio" id="left-item" name="sexo" value="femenino"> Femenino
+						</right>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<input class="form-control"type="text" placeholder="Nome" id="nome" name="nome" value="<%=dadosForm.nome%>">
+				</div>
+				<div class="col-sm-12">
+					<input class="form-control" type="text" placeholder="Sobrenome" id="sobrenome" name="sobrenome" value="<%=dadosForm.sobrenome%>">
+				</div>
+				<div class="col-sm-12">
+					<br />
+					<label>Data de Nascimento</label>
+					<input class="form-control" type="date" placeholder="Data Nascimento" id="data_nascimento" name="data_nascimento" value="<%=dadosForm.data_nascimento%>" >
+				</div>
+				<hr>
+				<div class="col-sm-12">
+					<input class="form-control" type="text" placeholder="usuario" id="usuario" name="usuario" value="<%=dadosForm.usuario%>">
+				</div>
+				<div class="col-sm-12">
+					<input class="form-control" type="password" placeholder="senha" id="senha" name="senha" value="<%=dadosForm.senha%>">
+				</div>
+				<br />
+				<div class="col-sm-12">
+					<button type="submit" class="btn btn-primary" id="enviar">Enviar Fomulário</button>
+				</div>	
+			</form>
+		</div>
+		</div>
+		<br />
+
+	    	<% if(validacao.length > 0) { %>
+	    		<div class="alert alert-danger">
+	    			<strong>Atenção!</strong>
+	    			<ul>
+	    				<% for(var i = 0; i < validacao.length; i++) { %>
+	    					<li><%=validacao[i].msg%></li>
+	    				<% } %>
+	    			</ul>
+	    		</div>
+	    	<% } %>
+	</div>
+</body>
+</html>

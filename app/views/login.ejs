@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="js/jquery-2.2.1.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<title>Login</title>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Application</a>
+	  <a class="btn btn-secondary" href="/cadastro_usuario" role="button">Cadastrar</a>
+	</nav>
+	<br />
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<img src="img/node.jpg" width="256" />
+				<img src="img/javascript.jpg" width="256" /><br />
+				<img src="img/mongo.jpg" width="256" />
+				<img src="img/rest.png" width="256" /><br />
+			</div>
+			<div class="col-sm-6">
+				<form action="/autenticar" method="post">
+					<div class="container">
+					  <div class="row">
+					    <div class="col-sm-5">
+					      <input type="text" class="form-control" id="" name="usuario" placeholder="Digite seu usuário">
+					    </div>
+					    <div class="col-sm-5">
+					      <input type="password" class="form-control" id="" name="senha" placeholder="Digite sua senha">
+					    </div>
+					    <div class="col-sm-2">
+					      <button type="submit" class="btn btn-primary">Entrar</button>
+					      
+					    </div> 
+					  </div><br />
+					  <div class="row">
+					  	<div class="col-sm-12">	  					
+							<% if(validacao.length > 0){ %>
+					   		<div class="alert alert-danger">
+					   			<strong>Atenção!</strong>
+					   			<ul>
+					   				<% for(var i = 0; i < validacao.length; i++) { %>
+					    				<li><%=validacao[i].msg%></li>
+					    			<% } %>
+					    		</ul>
+					    	</div>
+							<% } %>
+					  	</div> 	
+					  </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<br />	
+	<footer class="bg-light">
+		<hr>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<br />
+					<br />					
+				</div>
+				<div class="col-sm-6">
+					<br />
+					<br />		
+				</div>
+			</div>
+		</div>
+		<h6>Versão: 1.0.0</h6>	
+	</footer>
+</body>
+</html>
